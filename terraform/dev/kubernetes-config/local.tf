@@ -1,0 +1,16 @@
+locals {
+  repo                                 = nonsensitive(data.tfe_outputs.eks_cluster.values.repo)
+  aws_region                           = nonsensitive(data.tfe_outputs.eks_cluster.values.aws_region)
+  aws_account_id                       = nonsensitive(data.tfe_outputs.eks_cluster.values.aws_account_id)
+  eks_cluster_id                       = nonsensitive(data.tfe_outputs.eks_cluster.values.eks_cluster_id)
+  eks_cluster_endpoint                 = nonsensitive(data.tfe_outputs.eks_cluster.values.eks_cluster_endpoint)
+  eks_cluster_security_group_id        = nonsensitive(data.tfe_outputs.eks_cluster.values.eks_cluster_security_group_id)
+  eks_oidc_provider                    = nonsensitive(data.tfe_outputs.eks_cluster.values.eks_oidc_provider)
+  eks_oidc_provider_arn                = nonsensitive(data.tfe_outputs.eks_cluster.values.eks_oidc_provider_arn)
+  eks_node_security_group_id           = nonsensitive(data.tfe_outputs.eks_cluster.values.eks_node_security_group_id)
+  eks_managed_node_group_iam_role_name = nonsensitive(data.tfe_outputs.eks_cluster.values.eks_managed_node_group_iam_role_name)
+  eks_managed_node_group_iam_role_arn  = nonsensitive(data.tfe_outputs.eks_cluster.values.eks_managed_node_group_iam_role_arn)
+  vpc_public_subnets                   = nonsensitive(data.tfe_outputs.eks_cluster.values.vpc_public_subnets)
+  vpc_private_subnets                  = nonsensitive(data.tfe_outputs.eks_cluster.values.vpc_private_subnets)
+  vpc_id                               = nonsensitive(data.tfe_outputs.eks_cluster.values.vpc_id)
+}

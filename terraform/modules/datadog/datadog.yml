@@ -1,0 +1,33 @@
+# Datadog Agent with Datadog Cluster Agent and
+# OrchestratorExplorer (Live Containers), Check Runners, and
+# External Metrics Server enabled
+
+targetSystem: "linux"
+datadog:
+  site: us5.datadoghq.com
+  clusterName: jw-tf-sp-dev
+  tags: []
+  orchestratorExplorer:
+    enabled: true
+clusterAgent:
+  replicas: 2
+  rbac:
+    create: true
+    serviceAccountName: default
+  metricsProvider:
+    enabled: true
+    createReaderRbac: true
+    useDatadogMetrics: true
+    service:
+      type: ClusterIP
+      port: 8443
+agents:
+  rbac:
+    create: true
+    serviceAccountName: default
+clusterChecksRunner:
+  enabled: true
+  rbac:
+    create: true
+    serviceAccountName: default
+  replicas: 2
